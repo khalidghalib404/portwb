@@ -12,8 +12,8 @@ export const Footer = () => {
         
         <div className="flex gap-6">
           <a href="https://github.com/khalidghalib404" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors"><Github size={20} /></a>
-          <a href="https://linkedin.com/in/khalidghalib" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
-          <a href="https://khalidghalib.netlify.app" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors"><Globe size={20} /></a>
+          <a href="https://www.linkedin.com/in/khalid-ghalib-a3619b288/" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
+          <a href="https://khalidgh.netlify.app" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-white transition-colors"><Globe size={20} /></a>
         </div>
       </div>
     </footer>
