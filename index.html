@@ -8,6 +8,73 @@
       name="description"
       content="Portfolio of Khalid Ghalib - Full Stack Developer"
     />
+    <!-- Favicon and app icons -->
+    <link rel="icon" href="/portimg.jpeg" type="image/jpeg" sizes="any" />
+    <link rel="apple-touch-icon" href="/portimg.jpeg" />
+    <link rel="shortcut icon" href="/portimg.jpeg" type="image/jpeg" />
+    <meta name="theme-color" content="#030014" />
+    <script>
+      // Generate rounded favicons from existing image at runtime
+      (function () {
+        const src = "/portimg.jpeg";
+        const sizes = [16, 32, 180, 512];
+
+        function makeIcon(size) {
+          const c = document.createElement("canvas");
+          c.width = c.height = size;
+          const ctx = c.getContext("2d");
+          const r = size / 2;
+          ctx.clearRect(0, 0, size, size);
+          ctx.beginPath();
+          ctx.arc(r, r, r, 0, Math.PI * 2);
+          ctx.closePath();
+          ctx.clip();
+
+          return new Promise((resolve) => {
+            const img = new Image();
+            img.crossOrigin = "anonymous";
+            img.onload = () => {
+              const iw = img.width,
+                ih = img.height;
+              const scale = Math.max(size / iw, size / ih); // cover
+              const dw = iw * scale,
+                dh = ih * scale;
+              const dx = (size - dw) / 2,
+                dy = (size - dh) / 2;
+              ctx.drawImage(img, dx, dy, dw, dh);
+              resolve({ size, url: c.toDataURL("image/png") });
+            };
+            img.src = src;
+          });
+        }
+
+        function setLink(rel, sizesAttr, href, type) {
+          let sel = `link[rel="${rel}"]`;
+          if (sizesAttr) sel += `[sizes="${sizesAttr}"]`;
+          let link = document.querySelector(sel);
+          if (!link) {
+            link = document.createElement("link");
+            link.rel = rel;
+            if (sizesAttr) link.sizes = sizesAttr;
+            if (type) link.type = type;
+            document.head.appendChild(link);
+          }
+          link.href = href;
+          if (type) link.type = type;
+        }
+
+        Promise.all(sizes.map(makeIcon)).then((list) => {
+          list.forEach(({ size, url }) => {
+            if (size === 180) setLink("apple-touch-icon", undefined, url, "image/png");
+            if (size === 16 || size === 32) setLink("icon", `${size}x${size}`, url, "image/png");
+          });
+          const best = list.find((i) => i.size === 32) || list[list.length - 1];
+          setLink("shortcut icon", undefined, best.url, "image/png");
+          setLink("icon", undefined, best.url, "image/png");
+        });
+      })();
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

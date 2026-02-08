@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-hot-toast";
 
 export const Contact = () => {
   const [formState, setFormState] = useState<
@@ -22,11 +23,11 @@ export const Contact = () => {
 
       setFormState("sent");
       if (form) form.reset();
-      alert("Message sent successfully!");
+      toast.success("Message sent successfully!");
     } catch (error) {
       console.error("EmailJS error:", error);
       setFormState("error");
-      alert("Something went wrong 😢");
+      toast.error("Something went wrong. Please try again.");
     }
   };
 

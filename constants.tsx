@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
     description:
       "Full eCommerce Platform. Built a complete system with product management, cart, checkout, and order tracking. Features an admin dashboard for managing users and visualizing income analytics.",
     tags: ["React.js", "Django", "PostgreSQL", "Tailwind CSS"],
-    image: "./khared.png",
+    image: "/projects/khared.png",
     link: "https://kharedaf.netlify.app/",
     github: "https://github.com/khalidghalib404",
   },
@@ -35,7 +35,7 @@ export const PROJECTS: Project[] = [
     description:
       "Food Ordering System. Developed a food-ordering website allowing users to browse menus and place orders in real time. Includes an admin dashboard and server-side rendering for SEO.",
     tags: ["Next.js", "MongoDB", "Tailwind CSS", "React.js"],
-    image: "./testnest.png",
+    image: "/projects/testnest.png",
     link: "https://taste-nest.netlify.app/",
     github: "https://github.com/khalidghalib404",
   },
@@ -45,7 +45,7 @@ export const PROJECTS: Project[] = [
     description:
       "SaaS application leveraging Gemini API to generate marketing copy and blog posts.",
     tags: ["Next.js", "Gemini API", "TypeScript", "Stripe"],
-    image: "./resuai.png",
+    image: "/projects/resuai.png",
     link: "https://resuai1.netlify.app/",
     github: "https://github.com/khalidghalib404",
   },
