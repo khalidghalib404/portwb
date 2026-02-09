@@ -60,6 +60,7 @@ export const Hero = () => {
     <section
       id="home"
       className="h-screen w-full flex items-center justify-center bg-black/[0.96] antialiased relative overflow-hidden"
+      
     >
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
@@ -69,7 +70,7 @@ export const Hero = () => {
       {/* Brand Watermark / Subtle Top ID */}
       <div className="absolute top-10 left-10 z-20 hidden md:block opacity-20 hover:opacity-100 transition-opacity">
         <span className="text-xs font-display font-bold tracking-[0.4em] uppercase">
-          K. Ghalib
+          K. Ghalibgh
         </span>
       </div>
 

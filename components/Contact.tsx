@@ -13,6 +13,7 @@ export const Contact = () => {
     e.preventDefault();
     setFormState("sending");
 
+    
     // Cache the form element before any await to avoid React event pooling issues
     const form = e.currentTarget as HTMLFormElement | null;
 
