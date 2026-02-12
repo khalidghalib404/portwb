@@ -70,7 +70,7 @@ export const Hero = () => {
       {/* Brand Watermark / Subtle Top ID */}
       <div className="absolute top-10 left-10 z-20 hidden md:block opacity-20 hover:opacity-100 transition-opacity">
         <span className="text-xs font-display font-bold tracking-[0.4em] uppercase">
-          K. Ghalibghgdfhgfhgf
+          K. Ghalibghgdfhgfhgfsdfdsaf
         </span>
       </div>
 
